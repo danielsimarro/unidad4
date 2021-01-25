@@ -19,9 +19,13 @@ public class CasoB3bis {
         final double preciobase = cantidad * preciounitario;
         final double descuento;
         if (preciobase > 1000) {
-            return preciobase;
+            descuento = 0.90;
+
         } else {
-            return preciobase * 0.95;
+            descuento = 0.95;
+
         }
+
+        return preciobase * descuento;
     }
 }

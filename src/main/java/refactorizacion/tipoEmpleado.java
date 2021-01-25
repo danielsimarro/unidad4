@@ -13,6 +13,11 @@ public class tipoEmpleado {
 
     private String tipo;
     private double horabase;
+    
+    public tipoEmpleado(String t, double h){
+        this.tipo=t;
+        this.horabase=h;
+    }
 
     public String getTipo() {
         return tipo;
@@ -22,8 +27,23 @@ public class tipoEmpleado {
         return horabase;
     }
 
-    public void setTipoEmpleado(String t, double h) {
-        this.tipo = t;
-        this.horabase = h;
+    
+    public double calculoHoras(int horas, int horasextra) {
+        if (tipo.equals("Supervisor")) {
+
+            return horas + horasextra * 1.40;
+        }
+
+        if (tipo.equals("Dependiente")) {
+
+            return horas + horasextra * 1.75;
+        }
+
+        return horas + horasextra * 1.5;
+
     }
+
+    
+    
+
 }
